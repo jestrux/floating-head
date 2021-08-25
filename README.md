@@ -3,8 +3,7 @@ Mac menu app for showing floating head from webcam on top of all other windows. 
 
 ## Preview
 
-https://user-images.githubusercontent.com/8426172/130859592-f2e06750-16d9-4f67-990c-fd9008cc097d.mp4
-
+https://user-images.githubusercontent.com/8426172/130859974-c0f902f1-c558-4ac6-95ae-3b601db292fe.mp4
 
 ## Setting up for development
 
