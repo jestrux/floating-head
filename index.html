@@ -2,83 +2,10 @@
 <html lang="en">
 
 <head>
-    <style>
-        body {
-            padding: 0;
-            margin: 0;
-            -webkit-user-select: none;
-            -webkit-app-region: drag;
-        }
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self';" />
 
-        div {
-            background-color: black;
-            width: 180px;
-            height: 180px;
-            margin-top: 15px;
-            border-radius: 50%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        button {
-            -webkit-app-region: no-drag;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: fixed;
-            right: 8px;
-            top: 8px;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            background-color: black;
-            border: none;
-            outline: none;
-            z-index: 50;
-        }
-
-        #shuffler {
-            background: #f00;
-            right: 44px;
-        }
-
-        video, canvas {
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        canvas{
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }
-
-        span{
-            display: block;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 10;
-            text-align: center;
-            padding: 0.7rem 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        body:not(:hover) button,
-        body:not(:hover) span {
-            display: none;
-        }
-    </style>
-
-    <link rel="stylesheet" href="filters.css" />
+    <link rel="stylesheet" href="assets/app.css" />
+    <link rel="stylesheet" href="assets/filters.css" />
 </head>
 
 <body>
@@ -101,43 +28,7 @@
         </svg>
     </button>
 
-    <script>
-        const filters = ["#nofilter", "_1977", "aden", "brannan", "brooklyn", "clarendon", "earlybird", "gingham", "hudson", "inkwell", "kelvin", "lark", "lofi", "maven", "mayfair", "moon", "nashville", "perpetua", "reyes", "rise", "slumber", "stinson", "toaster", "valencia", "walden", "willow", "xpro2"];
-        let filterIndex = 0;
-        const video = document.querySelector("#video");
-        const constraints = { audio: false, video: true };
-        const wrapper = document.querySelector("div");
-        const filterName = document.querySelector("span");
-
-        document.querySelector("#shuffler").onclick = function (e) {
-            if (filterIndex == filters.length - 1) filterIndex = 0;
-            else filterIndex += 1;
-
-            wrapper.className = filters[filterIndex];
-            filterName.innerText = filters[filterIndex];
-        }
-
-        document.querySelector("#closer").onclick = function (e) {
-            window.api.send("close");
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            video.play();
-            navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError);
-        });
-
-        function handleSuccess(stream) {
-            video.srcObject = stream;
-            if (video.paused) {
-                video.play();
-                processor.doLoad();
-            }
-        }
-
-        function handleError(error) {
-            console.log('navigator.MediaDevices.getUserMedia error: ', error.message, error.name);
-        }
-    </script>
+    <script src="assets/app.js"></script>
 </body>
 
 </html>

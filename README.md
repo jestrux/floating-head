@@ -1,15 +1,15 @@
-# Pisatch
-Mac menu app for searching images easily. You can download the latest packaged app in [releases](https://github.com/jestrux/Search-Images-Menu-App/releases).
+# Floating Head
+Mac menu app for showing floating head from webcam on top of all other windows. You can download the latest packaged app in [releases](https://github.com/jestrux/floating-head/releases).
 
 ## Preview
-![Pisatch preview](/preview.gif?raw=true "Pisatch preview")
+![Floating Head preview](/preview.gif?raw=true "Floating Head preview")
 
 ## Setting up for development
 
 Clone this repository locally :
 
 ``` bash
-git clone https://github.com/jestrux/pisatch.git
+git clone https://github.com/jestrux/floating-head.git
 ```
 
 Install dependencies with npm :

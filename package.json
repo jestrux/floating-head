@@ -2,11 +2,11 @@
   "name": "floating-head",
   "productName": "Floating Head",
   "version": "1.1.0",
-  "main": "index.js",
+  "main": "main.js",
   "license": "MIT",
   "scripts": {
-    "start": "electron index.js",
-    "package": "electron-packager ./ --platform=darwin --arch=x64 --icon=icon.png --ignore=preview.gif"
+    "start": "electron main.js",
+    "package": "electron-packager ./ --platform=darwin --arch=x64 --icon=assets/icon.png --ignore=preview.gif"
   },
   "dependencies": {
     "menubar": "^9.0.0"
